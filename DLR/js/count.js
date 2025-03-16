@@ -72,6 +72,9 @@
                 timeToCountDown = 0;
 
                 updateTimer(timeLeft);
+                
+                // play関数で音楽の再生
+                music_play.pause();
 
                 return;
             }
