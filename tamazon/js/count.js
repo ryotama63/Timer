@@ -6,7 +6,7 @@
     var start = document.getElementById('start');
     const music_play = document.querySelector("#music_play");
     const music_last_10 = document.querySelector("#music_last_10");
-    const limit_time = 630000;
+    const limit_time = 2400000;
 
     // スタートタイムを押した時の時間を入れる変数
     var startTime;
