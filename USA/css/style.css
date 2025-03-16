@@ -11,3 +11,7 @@ div.container{
 div#controls{
    text-align:center;
 }
+
+span{
+     margin: 0px 10px 0px 10px;
+}
