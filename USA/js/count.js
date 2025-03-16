@@ -73,6 +73,9 @@
 
                 updateTimer(timeLeft);
 
+                // play関数で音楽の再生
+                music.pause();
+
                 return;
             }
 
