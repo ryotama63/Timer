@@ -11,7 +11,7 @@
     var startTime;
 
     // 残り時間を計算するための変数
-    var timeLeft;
+    var timeLeft = 2400000;
 
     // 現在時刻と表示形式を合わせるために * 1000
     var timeToCountDown = 2400000;
