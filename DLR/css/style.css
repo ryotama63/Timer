@@ -9,9 +9,10 @@ div.container{
 }
 
 div#controls{
-   text-align:center;
+     text-align:center;
+     margin: 20px 0px 0px 0px;
 }
 
 span{
-     margin: 0px 80px 0px 80px;
+    margin: 0px 80px 0px 80px;
 }
