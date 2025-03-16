@@ -73,7 +73,7 @@
 
                 updateTimer(timeLeft);
 
-                // play関数で音楽の再生
+                // pause関数で音楽の停止
                 music.pause();
 
                 return;
@@ -113,7 +113,7 @@
             // カウントを止めたいのでclearTimeoutする
             clearTimeout(timerId);
 
-            // play関数で音楽の再生
+            // pause関数で音楽の停止
             music.pause();
         }
     });
