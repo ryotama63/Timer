@@ -1,0 +1,13 @@
+body {
+     background-image: url("../image/usa_background.png");
+}
+
+div.container{
+     display: flex;
+     justify-content: center;
+     margin: 75px 0px 0px 0px;
+}
+
+div#start{
+   text-align:center;
+}
