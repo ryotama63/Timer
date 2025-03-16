@@ -63,7 +63,7 @@
             timeLeft = timeToCountDown - (Date.now() - startTime);
 
             // 残り時間が0になった時の処理
-            if (timeLeft === 600000) {
+            if (timeLeft == 600000) {
 
                 // play関数で音楽の再生
                 music_play.pause();
@@ -104,7 +104,7 @@
             
             startTime = Date.now();
 
-            if (timeLeft < 600000) {
+            if (timeLeft > 600000) {
                 // pause関数で音楽の再生
                 music_play.play();
             } else {
@@ -127,7 +127,7 @@
             clearTimeout(timerId);
 
             // 残り時間が0になった時の処理
-            if (timeLeft < 600000) {
+            if (timeLeft > 600000) {
                 // pause関数で音楽の停止
                 music_play.pause();
             } else {
