@@ -63,7 +63,7 @@
             timeLeft = timeToCountDown - (Date.now() - startTime);
 
             // 残り時間が0になった時の処理
-            if (timeLeft = 600000) {
+            if (timeLeft === 600000) {
 
                 // play関数で音楽の再生
                 music_play.pause();
@@ -104,8 +104,13 @@
             
             startTime = Date.now();
 
-            // play関数で音楽の再生
-            music_play.play();
+            if (timeLeft > 600000) {
+                // pause関数で音楽の再生
+                music_play.play();
+            } else {
+                // pause関数で音楽の再生
+                music_last_10.play();
+            }
 
             // カウントダウンの機能は再帰的に実行
             countDown();
@@ -121,8 +126,14 @@
             // カウントを止めたいのでclearTimeoutする
             clearTimeout(timerId);
 
-            // pause関数で音楽の停止
-            music_play.pause();
+            // 残り時間が0になった時の処理
+            if (timeLeft > 600000) {
+                // pause関数で音楽の停止
+                music_play.pause();
+            } else {
+                // pause関数で音楽の停止
+                music_last_10.pause();
+            }
         }
     });
 })();
