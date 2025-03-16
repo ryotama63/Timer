@@ -6,15 +6,16 @@
     var start = document.getElementById('start');
     const music_play = document.querySelector("#music_play");
     const music_last_10 = document.querySelector("#music_last_10");
+    const limit_time = 630000;
 
     // スタートタイムを押した時の時間を入れる変数
     var startTime;
 
     // 残り時間を計算するための変数
-    var timeLeft = 2400000;
+    var timeLeft = limit_time;
 
     // 現在時刻と表示形式を合わせるために * 1000
-    var timeToCountDown = 2400000;
+    var timeToCountDown = limit_time;
 
     // clearTimeoutメソッドを使いたいので、その時用に変数定義
     var timerId;
