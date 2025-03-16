@@ -7,6 +7,7 @@
     const music_play = document.querySelector("#music_play");
     const music_last_10 = document.querySelector("#music_last_10");
     const limit_time = 2400000;
+    const bgm_change_time = 600000;
 
     // スタートタイムを押した時の時間を入れる変数
     var startTime;
@@ -64,7 +65,7 @@
             timeLeft = timeToCountDown - (Date.now() - startTime);
 
             // 残り時間が0になった時の処理
-            if (timeLeft == 600000) {
+            if (timeLeft == bgm_change_time) {
 
                 // play関数で音楽の再生
                 music_play.pause();
@@ -105,7 +106,8 @@
             
             startTime = Date.now();
 
-            if (timeLeft > 600000) {
+            // 残り時間に合わせたbgmの再生
+            if (timeLeft > bgm_change_time) {
                 // pause関数で音楽の再生
                 music_play.play();
             } else {
@@ -127,8 +129,8 @@
             // カウントを止めたいのでclearTimeoutする
             clearTimeout(timerId);
 
-            // 残り時間が0になった時の処理
-            if (timeLeft > 600000) {
+            // 残り時間に合わせたbgmの停止
+            if (timeLeft > bgm_change_time) {
                 // pause関数で音楽の停止
                 music_play.pause();
             } else {
