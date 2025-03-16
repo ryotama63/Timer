@@ -14,7 +14,7 @@
     var timeLeft;
 
     // 現在時刻と表示形式を合わせるために * 1000
-    var timeToCountDown = 300000;
+    var timeToCountDown = 900000;
 
     // clearTimeoutメソッドを使いたいので、その時用に変数定義
     var timerId;
@@ -51,9 +51,7 @@
         s = ('0' + s).slice(-2);
         var timertext = m + ':' + s;
         timer.innerHTML = timertext.replace(/[0-9:]/g,c=>replaceMap[c]||c);
-
     }
-
 
     function countDown() {
 
