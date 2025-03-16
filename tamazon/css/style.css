@@ -1,0 +1,18 @@
+body {
+     background-image: url("../image/tamazon_background.png");
+}
+
+div.container{
+     display: flex;
+     justify-content: center;
+     margin: 130px 0px 0px 0px;
+}
+
+div#controls{
+     text-align:center;
+     margin: 40px 0px 0px 0px;
+}
+
+span{
+    margin: 0px 80px 0px 80px;
+}
