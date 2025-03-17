@@ -7,8 +7,8 @@
     const music_play = document.querySelector("#music_play");
     const music_last_10 = document.querySelector("#music_last_10");
     var limit_time = 610000;
-    // const limit_time = 2400000;
-    const bgm_change_time = 600000;
+    // var limit_time = 2400000;
+    var bgm_change_time = 600000;
 
     // スタートタイムを押した時の時間を入れる変数
     var startTime;
