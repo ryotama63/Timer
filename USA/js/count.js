@@ -44,7 +44,7 @@
     function updateTimer(t) {
 
         // 引数として渡されたtでデータオブジェクトを作りたいので変数dという変数名で作ってみる
-        var d = new Date(t);
+        var d = new Date(t+999);
         var m = d.getMinutes();
         var s = d.getSeconds();
         s = ('0' + s).slice(-2);
