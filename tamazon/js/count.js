@@ -33,7 +33,6 @@
     var btnSTOP = '<img id="button" src="./image/STOPボタン.png">';
     var imgTIME_UP = '<img src="./image/TIME_UP.png">';
     
-    
     // 画像置換
     let replaceMap = {
     '0':'<img src="./image/0.png">',
@@ -53,7 +52,7 @@
     function updateTimer(t) {
 
         // 引数として渡されたtでデータオブジェクトを作りたいので変数dという変数名で作ってみる
-        var d = new Date(t);
+        var d = new Date(t+999);
         var m = d.getMinutes();
         var s = d.getSeconds();
         m = ('0' + m).slice(-2);
