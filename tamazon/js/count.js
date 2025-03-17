@@ -6,9 +6,9 @@
     var start = document.getElementById('start');
     const music_play = document.querySelector("#music_play");
     const music_last_10 = document.querySelector("#music_last_10");
-    var limit_time = 610000;
-    // var limit_time = 2400000;
-    var bgm_change_time = 600000;
+    const limit_time = 610000;
+    // const limit_time = 2400000;
+    const bgm_change_time = 600000;
 
     // スタートタイムを押した時の時間を入れる変数
     var startTime;
@@ -24,8 +24,11 @@
 
     // カウントダウンの状態を管理できるようにする
     var isRunning = false;
+    
+    // 残り10分フラグ
+    var isLast10 = false;
 
-    // カウントダウンの状態を管理できるようにする
+    // ボタン画像定義
     var btnSTART = '<img id="button" src="./image/STARTボタン.png">';
     var btnSTOP = '<img id="button" src="./image/STOPボタン.png">';
     
@@ -65,29 +68,34 @@
             // 残り時間 = カウントされる時間 - 現在時刻
             timeLeft = timeToCountDown - (Date.now() - startTime);
 
-            // 残り時間が0になった時の処理
-            if (timeLeft == bgm_change_time) {
+            // 残り時間10分か判定
+            if (isLast10 === false) {
+                // 残り時間が10分を切った時の処理
+                if (timeLeft< bgm_change_time) {
 
-                // play関数で音楽の再生
-                music_play.pause();
-                music_last_10.play();
-            }
+                    isLast10 = true;
+                    // play関数で音楽の再生
+                    music_play.pause();
+                    music_last_10.play();
+                }
 
-            // 残り時間が0になった時の処理
-            if (timeLeft < 0) {
-                isRunning = false;
-                start.innerHTML = btnSTART;
-                clearTimeout(timerId);
-                timeLeft = 0;
+            } else {
+                // 残り時間が0になった時の処理
+                if (timeLeft < 0) {
+                    isRunning = false;
+                    start.innerHTML = btnSTART;
+                    clearTimeout(timerId);
+                    timeLeft = 0;
 
-                timeToCountDown = 0;
+                    timeToCountDown = 0;
 
-                updateTimer(timeLeft);
+                    updateTimer(timeLeft);
                 
-                // pause関数で音楽の停止
-                music_last_10.pause();
+                    // pause関数で音楽の停止
+                    music_last_10.pause();
 
-                return;
+                    return;
+                }
             }
 
             // countDownを再帰的に呼び出すために記述
@@ -108,7 +116,7 @@
             startTime = Date.now();
 
             // 残り時間に合わせたbgmの再生
-            if (timeLeft > bgm_change_time) {
+            if (isLast10 === false) {
                 // pause関数で音楽の再生
                 music_play.play();
             } else {
@@ -131,7 +139,7 @@
             clearTimeout(timerId);
 
             // 残り時間に合わせたbgmの停止
-            if (timeLeft > bgm_change_time) {
+            if (isLast10 === false) {
                 // pause関数で音楽の停止
                 music_play.pause();
             } else {
