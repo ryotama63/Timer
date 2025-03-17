@@ -82,7 +82,7 @@
 
             } else {
                 // 残り時間が0になった時の処理
-                if (timeLeft < 0) {
+                if (timeLeft < 0+999) {
                     isRunning = false;
                     start.innerHTML = '';
                     clearTimeout(timerId);
