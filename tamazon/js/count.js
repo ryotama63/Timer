@@ -31,6 +31,8 @@
     // ボタン画像定義
     var btnSTART = '<img id="button" src="./image/STARTボタン.png">';
     var btnSTOP = '<img id="button" src="./image/STOPボタン.png">';
+    var imgTIME_UP = '<img src="./image/TIME_UP.png">';
+    
     
     // 画像置換
     let replaceMap = {
@@ -83,13 +85,13 @@
                 // 残り時間が0になった時の処理
                 if (timeLeft < 0) {
                     isRunning = false;
-                    start.innerHTML = btnSTART;
+                    start.innerHTML = '';
                     clearTimeout(timerId);
                     timeLeft = 0;
 
                     timeToCountDown = 0;
 
-                    updateTimer(timeLeft);
+                    timer.innerHTML = imgTIME_UP;
                 
                     // pause関数で音楽の停止
                     music_last_10.pause();
