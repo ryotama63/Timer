@@ -67,6 +67,7 @@
             if (timeLeft < 0+999) {
                 isRunning = false;
                 start.innerHTML = '';
+                clear.innerHTML = '';
                 clearTimeout(timerId);
                 timeLeft = 0;
 
