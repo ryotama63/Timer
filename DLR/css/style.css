@@ -1,12 +1,12 @@
 body {
      background-color: #333333;
-    width: 100%;
 }
 
 div.container{
      display: flex;
      justify-content: center;
      margin: 130px 0px 0px 0px;
+     width: 100%;
 }
 
 div#controls{
