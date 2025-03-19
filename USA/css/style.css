@@ -7,6 +7,7 @@ div.container{
      display: flex;
      justify-content: center;
      margin: 75px 0px 0px 0px;
+     width: 100%;
 }
 
 div#controls{
