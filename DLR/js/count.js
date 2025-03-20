@@ -25,6 +25,7 @@
     // カウントダウンの状態を管理できるようにする
     var btnSTART = '<img id="button" src="./image/STARTボタン.png">';
     var btnSTOP = '<img id="button" src="./image/STOPボタン.png">';
+    var btnCLEAR = '<img src="./image/CLEARボタン.png">';
     var imgTIME_UP = '<img src="./image/TIME_UP.png">';
     
     // 画像置換
@@ -95,6 +96,7 @@
             isRunning = true;
 
             start.innerHTML = btnSTOP;
+            clear.innerHTML = btnCLEAR;
             
             startTime = Date.now();
 
