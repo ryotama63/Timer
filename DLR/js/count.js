@@ -120,7 +120,7 @@
         }
     });
 
-    // スタートを押したときの処理
+    // クリアを押したときの処理
     clear.addEventListener('click', function () {
 
         if (isRunning === false) {
@@ -128,8 +128,9 @@
         } else {
             isRunning = false;
 
-            // 表記をStartに戻す
-            start.innerHTML = btnSTART;
+            // ボタンを削除
+                start.innerHTML = '';
+                clear.innerHTML = '';
 
             // この時点のtimeLeftで更新してあげる
             timeToCountDown = timeLeft;
