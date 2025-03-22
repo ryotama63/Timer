@@ -11,7 +11,10 @@
 
     // 残り時間を計算するための変数
     var timeLeft;
-
+    
+    // コンマ用表示補正
+    var timeCorrection = 999;
+    
     // 現在時刻と表示形式を合わせるために * 1000
     var timeToCountDown = 300000;
 
@@ -45,7 +48,7 @@
     function updateTimer(t) {
 
         // 引数として渡されたtでデータオブジェクトを作りたいので変数dという変数名で作ってみる
-        var d = new Date(t+999);
+        var d = new Date(t + timeCorrection);
         var m = d.getMinutes();
         var s = d.getSeconds();
         s = ('0' + s).slice(-2);
@@ -64,7 +67,7 @@
             timeLeft = timeToCountDown - (Date.now() - startTime);
 
             // 残り時間が0になった時の処理
-            if (timeLeft < 0+999) {
+            if (timeLeft < 0) {
                 isRunning = false;
                 start.innerHTML = '';
                 clearTimeout(timerId);
