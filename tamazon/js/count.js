@@ -75,7 +75,7 @@
             // 残り時間10分か判定
             if (isLast10 === false) {
                 // 残り時間が10分を切った時の処理
-                if (timeLeft< bgm_change_time) {
+                if (timeLeft < bgm_change_time) {
 
                     isLast10 = true;
                     // play関数で音楽の再生
@@ -120,7 +120,7 @@
             startTime = Date.now();
 
             // 残り時間に合わせたbgmの再生
-            if (isLast10 === false) {
+            if (isLast10 == false) {
                 // pause関数で音楽の再生
                 music_play.play();
             } else {
